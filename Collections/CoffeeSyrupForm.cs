@@ -175,7 +175,7 @@ namespace Collections
                 //check if flavour already  exists
                 while(!itemFound && itemIndex < coffeeComboBox.Items.Count)
                 {
-                    if(coffeeComboBox.Text.Trim().ToUpper()== coffeeComboBox.Items[itemIndex].ToString().ToUpper() )
+                    if(coffeeComboBox.Text.Trim().ToUpper()== coffeeComboBox.Items[itemIndex].ToString().Trim().ToUpper() )
                     {
                         itemFound = true;
 
@@ -211,18 +211,53 @@ namespace Collections
         private void removeCoffeeFlavourToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //remove a coffee flavour if it exists
+            Boolean itemFound = false;
+            int itemIndex = 0;
 
-            //selection made from list?
-            if(coffeeComboBox.SelectedIndex == -1)//no selection made
+            //user types in the coffee flavour
+            if (coffeeComboBox.SelectedIndex == -1 && coffeeComboBox.Text.Trim() != String.Empty)
             {
-                MessageBox.Show("Please select the coffee flavout to delete", "No Selection Made",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                coffeeComboBox.Focus();
+                while (!itemFound && itemIndex < coffeeComboBox.Items.Count)
+                {
+                    if (coffeeComboBox.Text.Trim().ToUpper() == coffeeComboBox.Items[itemIndex].ToString().Trim().ToUpper())
+                    {
+                        itemFound = true;
+                        
+                    }//if
+                    else
+                    {
+                        itemIndex++;
+                    }
+                }//while
+
+                //if flavour found
+                if (!itemFound)
+                {
+                    MessageBox.Show("Cannot find the flavour to remove", "Remove Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    coffeeComboBox.Focus();
+                }
+                else
+                {
+                    //remove the flavour
+                    coffeeComboBox.Items.Remove(coffeeComboBox.Items[itemIndex]);
+                }
+
+
             }
-            else //selection made
+            else  //selection made from list?
             {
-                coffeeComboBox.Items.RemoveAt(coffeeComboBox.SelectedIndex);
-               // coffeeComboBox.Items.Remove(coffeeComboBox.Items[coffeeComboBox.SelectedIndex]);
+                if (coffeeComboBox.SelectedIndex == -1)//no selection made
+                {
+                    MessageBox.Show("Please select the coffee flavour to delete", "No Selection Made",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    coffeeComboBox.Focus();
+                }
+
+                else //selection made
+                {
+                    coffeeComboBox.Items.RemoveAt(coffeeComboBox.SelectedIndex);
+                    // coffeeComboBox.Items.Remove(coffeeComboBox.Items[coffeeComboBox.SelectedIndex]);
+                }
             }
         }
     }

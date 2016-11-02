@@ -243,7 +243,7 @@
             "Chocolate Almond",
             "Espresso Roast",
             "Jamaica Blue Mountain",
-            "Kona Blend ",
+            "Kona Blend",
             "Vanilla Nut"});
             this.coffeeComboBox.Location = new System.Drawing.Point(86, 150);
             this.coffeeComboBox.Name = "coffeeComboBox";
