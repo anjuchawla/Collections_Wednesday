@@ -96,12 +96,14 @@
             this.printSelectedToolStripMenuItem.Name = "printSelectedToolStripMenuItem";
             this.printSelectedToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.printSelectedToolStripMenuItem.Text = "&Print Selected";
+            this.printSelectedToolStripMenuItem.Click += new System.EventHandler(this.printSelectedToolStripMenuItem_Click_1);
             // 
             // previewSelectedToolStripMenuItem
             // 
             this.previewSelectedToolStripMenuItem.Name = "previewSelectedToolStripMenuItem";
             this.previewSelectedToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.previewSelectedToolStripMenuItem.Text = "Preview &Selected";
+            this.previewSelectedToolStripMenuItem.Click += new System.EventHandler(this.previewSelectedToolStripMenuItem_Click_1);
             // 
             // printAllFlavoursToolStripMenuItem
             // 
@@ -115,14 +117,16 @@
             // printAllToolStripMenuItem
             // 
             this.printAllToolStripMenuItem.Name = "printAllToolStripMenuItem";
-            this.printAllToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.printAllToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.printAllToolStripMenuItem.Text = "&Print All";
+            this.printAllToolStripMenuItem.Click += new System.EventHandler(this.printAllToolStripMenuItem_Click_1);
             // 
             // previewAllToolStripMenuItem
             // 
             this.previewAllToolStripMenuItem.Name = "previewAllToolStripMenuItem";
-            this.previewAllToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.previewAllToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.previewAllToolStripMenuItem.Text = "Pre&view All";
+            this.previewAllToolStripMenuItem.Click += new System.EventHandler(this.previewAllToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
@@ -166,12 +170,14 @@
             this.clearCoffeeListToolStripMenuItem.Name = "clearCoffeeListToolStripMenuItem";
             this.clearCoffeeListToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.clearCoffeeListToolStripMenuItem.Text = "&Clear Coffee List";
+            this.clearCoffeeListToolStripMenuItem.Click += new System.EventHandler(this.clearCoffeeListToolStripMenuItem_Click);
             // 
             // countCoffeeListToolStripMenuItem
             // 
             this.countCoffeeListToolStripMenuItem.Name = "countCoffeeListToolStripMenuItem";
             this.countCoffeeListToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.countCoffeeListToolStripMenuItem.Text = "Count Coffee &List";
+            this.countCoffeeListToolStripMenuItem.Click += new System.EventHandler(this.countCoffeeListToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -225,6 +231,14 @@
             this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Anju Chawla";
+            // 
+            // printAllDocument
+            // 
+            this.printAllDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printAllDocument_PrintPage_1);
+            // 
+            // printSelectedDocument
+            // 
+            this.printSelectedDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printSelectedDocument_PrintPage_1);
             // 
             // printPreviewDialog1
             // 
