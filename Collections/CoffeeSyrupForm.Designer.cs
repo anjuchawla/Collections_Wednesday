@@ -159,6 +159,7 @@
             this.removeCoffeeFlavourToolStripMenuItem.Name = "removeCoffeeFlavourToolStripMenuItem";
             this.removeCoffeeFlavourToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.removeCoffeeFlavourToolStripMenuItem.Text = "&Remove Coffee Flavour";
+            this.removeCoffeeFlavourToolStripMenuItem.Click += new System.EventHandler(this.removeCoffeeFlavourToolStripMenuItem_Click);
             // 
             // clearCoffeeListToolStripMenuItem
             // 

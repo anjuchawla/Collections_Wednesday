@@ -207,5 +207,23 @@ namespace Collections
                 coffeeComboBox.Focus();
             }
         }//addCoffee
+
+        private void removeCoffeeFlavourToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //remove a coffee flavour if it exists
+
+            //selection made from list?
+            if(coffeeComboBox.SelectedIndex == -1)//no selection made
+            {
+                MessageBox.Show("Please select the coffee flavout to delete", "No Selection Made",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                coffeeComboBox.Focus();
+            }
+            else //selection made
+            {
+                coffeeComboBox.Items.RemoveAt(coffeeComboBox.SelectedIndex);
+               // coffeeComboBox.Items.Remove(coffeeComboBox.Items[coffeeComboBox.SelectedIndex]);
+            }
+        }
     }
 }
